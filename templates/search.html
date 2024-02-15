@@ -1,0 +1,21 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% endblock %}
+{% block title %}
+  Search
+{% endblock %}
+{% block content %}
+<div>
+  <p>You have searched for:<b>"{{query}}"</b></p>
+</div>
+        {% for movie in movies %}
+<!--                <img  src="{{movie.poster_img.url}}" alt="{{movie.movie_title}}">-->
+                    <h4>{{movie.movie_title}}</h4>
+                    <p>{{movie.actors}}</p>
+        {% empty %}
+      <div>
+        <p> no results found</p>
+      </div>
+      {% endfor %}
+{% endblock %}

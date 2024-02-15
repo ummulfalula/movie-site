@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+ {% block body %}
+
+        {% for i in res %}
+        <div class="movie">
+            <div class="movie-image"> <span class="play"><span class="name"><a href="{% url 'finaltaskapp:detail' i.id %}">{{i.movie_title}}</a></span></span> <a href="{{i.ylink}}"><img src="{{i.poster_img.url}}" alt="" /></a> </div>
+          <div class="rating">
+            <p>RATING</p>
+            <div class="stars">
+              <div class="stars-in"> </div>
+            </div>
+            <span class="comments">12</span> </div>
+        </div>
+        {% endfor %}
+{% endblock %}
+
+<!--
